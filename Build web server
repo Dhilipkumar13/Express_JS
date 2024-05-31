@@ -1,1 +1,66 @@
 
+Dependencies:
+
+      express: Web framework for Node.js.
+      path: Node.js module for handling file and directory paths.
+Port Configuration:
+
+  The server will listen on the port defined in process.env.PORT or default to 3500.
+Routes:
+
+    /: Root route that sends a simple text response.
+    /index(.html)?: Matches the root or index.html with an optional .html extension.
+    /login(.js)?: Serves the login.js file from the server's root directory.
+    /newp-page(.html)?: Redirects to new-page.html with a 301 status code.
+    /hell(.html)?: Logs a message to the console before sending a response.
+    /*: Catch-all route that sends a 404 not found message for any unmatched routes.
+Middleware:
+
+    The middleware in the /hell(.html)? route logs a message before proceeding to the final response.
+Server:
+
+    Starts the server and listens on the specified port, logging a message to indicate that the server is running.
+This application serves as a basic example of how to set up routes and middleware in an Express.js application.
+
+
+
+                                              const express = require('express');
+                                              const app = express();
+                                              const path = require('path');
+                                              const PORT = process.env.PORT || 3500;
+                                              
+                                              // Root route
+                                              app.get('/', (req, res) => {
+                                                  res.send("hai Jakers");
+                                              });
+                                              
+                                              // Route for index.html with optional .html extension
+                                              app.get('^/$|/index(.html)?', (req, res) => {
+                                                  res.send("hai da illa daa");
+                                              });
+                                              
+                                              // Route to serve login.js file
+                                              app.get('/login(.js)?', (req, res) => {
+                                                  res.sendFile(path.join(__dirname, 'login.js'));
+                                              });
+                                              
+                                              // Route to redirect /newp-page(.html)? to new-page.html
+                                              app.get('/newp-page(.html)?', (req, res) => {
+                                                  res.redirect(301, 'new-page.html');
+                                              });
+                                              
+                                              // Route with middleware to log message and then send response
+                                              app.get('/hell(.html)?', (req, res, next) => {
+                                                  console.log("hai da mavane...");
+                                                  next();
+                                              }, (req, res) => {
+                                                  res.send("sollu da mavanee");
+                                              });
+                                              
+                                              // 404 route
+                                              app.get('/*', (req, res) => {
+                                                  res.send("404 not found");
+                                              });
+                                              
+                                              // Start the server
+                                              app.listen(PORT, () => console.log(`Server is running on PORT: ${PORT}`));
