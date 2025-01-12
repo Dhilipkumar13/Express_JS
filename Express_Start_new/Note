@@ -1,0 +1,20 @@
+Topics to cover:
+
+1 Express project setup
+2 create express server
+3 thunder client setup
+4 express router setup
+5 error handling & async handling
+6 express middleware
+7 mangodb setup
+8 mangoose schema
+9 crud api
+10 user authentication
+11 registration & login api
+12 controller db operation
+13 password hashing & comparing
+14 sign verity jwt token
+15 handle relationships
+16 protected routes
+17 user authorization
+18 api testing
