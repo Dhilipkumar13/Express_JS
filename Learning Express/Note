@@ -12,3 +12,4 @@ npm i dotenv package which help to access .env file with help of process modules
           define routes & respond to request
           handle middlewar - add functionality of middlewar to process instance before they reach to routes
           start server - listen & start the server
+
