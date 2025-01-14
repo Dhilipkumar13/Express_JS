@@ -15,3 +15,5 @@ npm i dotenv package which help to access .env file with help of process modules
 
 in our project we need to pass data from client to server -->> we need json object 
           which help to parse data from client to server
+**************
+          app.use(express.json())
