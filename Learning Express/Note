@@ -13,3 +13,5 @@ npm i dotenv package which help to access .env file with help of process modules
           handle middlewar - add functionality of middlewar to process instance before they reach to routes
           start server - listen & start the server
 
+in our project we need to pass data from client to server -->> we need json object 
+          which help to parse data from client to server
