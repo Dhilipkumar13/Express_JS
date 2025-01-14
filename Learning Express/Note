@@ -23,3 +23,7 @@ in express stack how it work?
           basically when request come to server middlewar function in stack start to run by order 
           if any error occur then it move to error-handling middlewar 
           else it move to router
+
+we need handle operation in mongodb server so we need to maintain our function as async
+          if function in "async" then error may occur so need to place your code inside try catch block
+          instead of using try catch block in express middlewar named "express-async-handler" which help if any error occur it catch and throw error handler 
