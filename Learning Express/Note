@@ -17,7 +17,9 @@ in our project we need to pass data from client to server -->> we need json obje
           which help to parse data from client to server
 **************
           app.use(express.json())
-in express stack how it work
-basically when request come to server middlewar function in stack start to run by order 
-if any error occur then it move to error-handling middlewar 
-else it move to router
+in express stack how it work?
+          stack is sequence of middlewar funtion that express help to process request
+
+          basically when request come to server middlewar function in stack start to run by order 
+          if any error occur then it move to error-handling middlewar 
+          else it move to router
